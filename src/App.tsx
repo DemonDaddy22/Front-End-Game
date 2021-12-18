@@ -1,26 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    return (
+        <section className="main">
+            <header className="header">
+                <h1 className="title">Front-End-Game</h1>
+                <h4 className="subtitle">
+                    The End Game of the Front End Interviews!
+                </h4>
+                <p className="description">
+                    Bunch of frequently asked mini-projects in the frontend
+                    machine coding rounds. Practice them now so that you don't
+                    panic at the all important moment!
+                </p>
+            </header>
+        </section>
+    );
+};
 
 export default App;
