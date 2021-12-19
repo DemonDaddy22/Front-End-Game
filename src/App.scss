@@ -11,6 +11,7 @@
     background: -webkit-linear-gradient(60deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     background: linear-gradient(60deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     background-size: 300% 300%;
+    transition: all 0.25s;
 	animation: gradient 32s ease infinite;
 
     @media screen and (min-width: 900px) {
@@ -24,6 +25,7 @@
     padding: 1rem 1rem 10rem;
     color: #FFFFFF;
     z-index: 10;
+    transition: all 0.25s;
 
     @media screen and (min-width: 576px) {
         padding-bottom: 15rem;
@@ -43,6 +45,7 @@
     font-weight: 900;
     font-size: 2rem;
     margin: 0;
+    transition: all 0.25s;
 
     @media screen and (min-width: 900px) {
         font-size: 3rem;
@@ -68,6 +71,7 @@
     margin-top: 2rem;
     font-size: 1.35rem;
     font-family: 'Oooh Baby', cursive;
+    transition: all 0.25s;
 
     @media screen and (min-width: 900px) {
         width: 50%;
@@ -98,6 +102,7 @@
     left: 50%;
     max-width: 80%;
     transform: translateX(-50%) rotate(90deg);
+    transition: all 0.25s;
 
     @media screen and (min-width: 576px) {
         max-width: 60%;
@@ -112,5 +117,22 @@
 
     @media screen and (min-width: 1200px) {
         max-width: 100%;
+    }
+}
+
+.button-fork {
+    background-color: #181717 !important;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1rem auto;
+    font-size: 0.8rem !important;
+    padding: 0.8rem 1rem !important;
+
+    @media screen and (min-width: 900px) {
+        margin: 0;
+        font-size: 1rem !important;
+        padding: 1rem 1.25rem !important;
     }
 }

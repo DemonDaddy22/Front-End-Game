@@ -1,7 +1,3 @@
-// TODO - create a button component
-// TODO - link GitHub button to repository
-// TODO - create a build & deploy workflow
-
 import { ICON_DEFAULT } from '../../resources/constants';
 
 const GitHub: React.FC<IconProps> = ({
