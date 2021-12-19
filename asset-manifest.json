@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Front-End-Game/static/css/main.76d27786.css",
+    "main.js": "/Front-End-Game/static/js/main.2b9e686f.js",
+    "static/media/Hands.png": "/Front-End-Game/static/media/Hands.d25951945033138b64b6.png",
+    "index.html": "/Front-End-Game/index.html",
+    "main.76d27786.css.map": "/Front-End-Game/static/css/main.76d27786.css.map",
+    "main.2b9e686f.js.map": "/Front-End-Game/static/js/main.2b9e686f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.76d27786.css",
+    "static/js/main.2b9e686f.js"
+  ]
+}
