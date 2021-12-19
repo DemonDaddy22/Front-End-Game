@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.scss';
+import Hands from './assets/img/Hands.png';
 
 const App = () => {
     return (
@@ -15,6 +16,7 @@ const App = () => {
                     panic at the all important moment!
                 </p>
             </header>
+            <img src={Hands} alt="hands" className="hands" />
         </section>
     );
 };
