@@ -1,0 +1,7 @@
+const generateSudoko = () => {
+
+}
+
+export {
+    generateSudoko
+}
