@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.scss';
+import GitHub from './assets/icons/GitHub';
 import Hands from './assets/img/Hands.png';
 
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
                     machine coding rounds. Practice them now so that you don't
                     panic at the all important moment!
                 </p>
+                <GitHub />
             </header>
             <img src={Hands} alt="hands" className="hands" />
         </section>

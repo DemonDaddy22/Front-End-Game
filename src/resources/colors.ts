@@ -1,0 +1,146 @@
+export const RED_50: string = '#ffebee';
+export const RED_100: string = '#ffcdd2';
+export const RED_200: string = '#ef9a9a';
+export const RED_300: string = '#e57373';
+export const RED_400: string = '#ef5350';
+export const RED_500: string = '#f44336';
+export const RED_600: string = '#e53935';
+export const RED_700: string = '#d32f2f';
+export const RED_800: string = '#c62828';
+export const RED_900: string = '#b71c1c';
+
+export const PURPLE_50: string = '#f3e5f5';
+export const PURPLE_100: string = '#e1bee7';
+export const PURPLE_200: string = '#ce93d8';
+export const PURPLE_300: string = '#ba68c8';
+export const PURPLE_400: string = '#ab47bc';
+export const PURPLE_500: string = '#9c27b0';
+export const PURPLE_600: string = '#8e24aa';
+export const PURPLE_700: string = '#7b1fa2';
+export const PURPLE_800: string = '#6a1b9a';
+export const PURPLE_900: string = '#4a148c';
+
+export const DEEP_PURPLE_50: string = '#ede7f6';
+export const DEEP_PURPLE_100: string = '#d1c4e9';
+export const DEEP_PURPLE_200: string = '#b39ddb';
+export const DEEP_PURPLE_300: string = '#9575cd';
+export const DEEP_PURPLE_400: string = '#7e57c2';
+export const DEEP_PURPLE_500: string = '#673ab7';
+export const DEEP_PURPLE_600: string = '#5e35b1';
+export const DEEP_PURPLE_700: string = '#512da8';
+export const DEEP_PURPLE_800: string = '#4527a0';
+export const DEEP_PURPLE_900: string = '#311b92';
+
+export const INDIGO_50: string = '#e8eaf6';
+export const INDIGO_100: string = '#c5cae9';
+export const INDIGO_200: string = '#9fa8da';
+export const INDIGO_300: string = '#7986cb';
+export const INDIGO_400: string = '#5c6bc0';
+export const INDIGO_500: string = '#3f51b5';
+export const INDIGO_600: string = '#3949ab';
+export const INDIGO_700: string = '#303f9f';
+export const INDIGO_800: string = '#283593';
+export const INDIGO_900: string = '#1a237e';
+
+export const BLUE_50: string = '#e3f2fd';
+export const BLUE_100: string = '#bbdefb';
+export const BLUE_200: string = '#90caf9';
+export const BLUE_300: string = '#64b5f6';
+export const BLUE_400: string = '#42a5f5';
+export const BLUE_500: string = '#2196f3';
+export const BLUE_600: string = '#1e88e5';
+export const BLUE_700: string = '#1976d2';
+export const BLUE_800: string = '#1565c0';
+export const BLUE_900: string = '#0d47a1';
+
+export const GREEN_50: string = '#e8f5e9';
+export const GREEN_100: string = '#c8e6c9';
+export const GREEN_200: string = '#a5d6a7';
+export const GREEN_300: string = '#81c784';
+export const GREEN_400: string = '#66bb6a';
+export const GREEN_500: string = '#4caf50';
+export const GREEN_600: string = '#43a047';
+export const GREEN_700: string = '#388e3c';
+export const GREEN_800: string = '#2e7d32';
+export const GREEN_900: string = '#1b5e20';
+
+export const TEAL_50: string = '#e0f2f1';
+export const TEAL_100: string = '#b2dfdb';
+export const TEAL_200: string = '#80cbc4';
+export const TEAL_300: string = '#4db6ac';
+export const TEAL_400: string = '#26a69a';
+export const TEAL_500: string = '#009688';
+export const TEAL_600: string = '#00897b';
+export const TEAL_700: string = '#00796b';
+export const TEAL_800: string = '#00695c';
+export const TEAL_900: string = '#004d40';
+
+export const ORANGE_50: string = '#fff3e0';
+export const ORANGE_100: string = '#ffe0b2';
+export const ORANGE_200: string = '#ffcc80';
+export const ORANGE_300: string = '#ffb74d';
+export const ORANGE_400: string = '#ffa726';
+export const ORANGE_500: string = '#ff9800';
+export const ORANGE_600: string = '#fb8c00';
+export const ORANGE_700: string = '#f57c00';
+export const ORANGE_800: string = '#ef6c00';
+export const ORANGE_900: string = '#e65100';
+
+export const DEEP_ORANGE_50: string = '#fbe9e7';
+export const DEEP_ORANGE_100: string = '#ffccbc';
+export const DEEP_ORANGE_200: string = '#ffab91';
+export const DEEP_ORANGE_300: string = '#ff8a65';
+export const DEEP_ORANGE_400: string = '#ff7043';
+export const DEEP_ORANGE_500: string = '#ff5722';
+export const DEEP_ORANGE_600: string = '#f4511e';
+export const DEEP_ORANGE_700: string = '#e64a19';
+export const DEEP_ORANGE_800: string = '#d84315';
+export const DEEP_ORANGE_900: string = '#bf360c';
+
+export const YELLOW_50: string = '#fffde7';
+export const YELLOW_100: string = '#fff9c4';
+export const YELLOW_200: string = '#fff59d';
+export const YELLOW_300: string = '#fff176';
+export const YELLOW_400: string = '#ffee58';
+export const YELLOW_500: string = '#ffeb3b';
+export const YELLOW_600: string = '#fdd835';
+export const YELLOW_700: string = '#fbc02d';
+export const YELLOW_800: string = '#f9a825';
+export const YELLOW_900: string = '#f57f17';
+
+export const WHITE: string = '#FFFFFF';
+export const WHITE_TRANSPARENT: string = '#FFFFFF59';
+export const WHITE_TRANSPARENT_20: string = '#FFFFFF33';
+export const WHITE_TRANSPARENT_30: string = '#FFFFFF4D';
+export const WHITE_TRANSPARENT_50: string = '#FFFFFF80';
+export const WHITE_TRANSPARENT_70: string = '#FFFFFFB3';
+export const WHITE_TRANSPARENT_90: string = '#FFFFFFE6';
+
+export const BLACK: string = '#000000';
+export const BLACK_5: string = '#0000000D';
+export const BLACK_10: string = '#0000001A';
+export const BLACK_20: string = '#00000033';
+export const BLACK_30: string = '#0000004D';
+export const BLACK_40: string = '#00000066';
+export const BLACK_50: string = '#00000080';
+export const BLACK_60: string = '#00000099';
+export const BLACK_70: string = '#000000B3';
+export const BLACK_80: string = '#000000CC';
+export const BLACK_90: string = '#000000E6';
+
+export const GREY_5: string = '#0D0D0D';
+export const GREY_10: string = '#1A1A1A';
+export const GREY_20: string = '#333333';
+export const GREY_30: string = '#4D4D4D';
+export const GREY_40: string = '#666666';
+export const GREY_50: string = '#808080';
+export const GREY_60: string = '#999999';
+export const GREY_70: string = '#B3B3B3';
+export const GREY_80: string = '#CCCCCC';
+export const GREY_90: string = '#E6E6E6';
+export const GREY_100: string = '#f7f4f4';
+
+export const THEME_ACCENT1: string = '#ee7752';
+export const THEME_ACCENT2: string = '#e73c7e';
+export const THEME_ACCENT3: string = '#23a6d5';
+export const THEME_ACCENT4: string = '#23d5ab';
