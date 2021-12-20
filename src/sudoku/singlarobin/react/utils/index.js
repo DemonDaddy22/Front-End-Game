@@ -1,8 +1,3 @@
-const generateSudoko =
-    () => {
+const generateSudoko = () => {};
 
-    }
-
-export {
-  generateSudoko
-}
+export { generateSudoko };
