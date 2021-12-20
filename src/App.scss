@@ -20,11 +20,18 @@
 }
 
 .header {
-    padding: 1rem;
+    position: relative;
+    padding: 1rem 1rem 10rem;
     color: #FFFFFF;
+    z-index: 10;
+
+    @media screen and (min-width: 576px) {
+        padding-bottom: 15rem;
+    }
 
     @media screen and (min-width: 900px) {
         width: 90%;
+        padding-bottom: 1rem;
     }
 
     @media screen and (min-width: 1200px) {
@@ -38,7 +45,7 @@
     margin: 0;
 
     @media screen and (min-width: 900px) {
-        font-size: 3.25rem;
+        font-size: 3rem;
     }
 
     @media screen and (min-width: 1200px) {
@@ -57,16 +64,18 @@
 }
 
 .description {
+    color: #FDEF50;
     margin-top: 2rem;
     font-size: 1.35rem;
     font-family: 'Oooh Baby', cursive;
 
     @media screen and (min-width: 900px) {
-        width: 60%;
+        width: 50%;
         font-size: 1.5rem;
     }
 
     @media screen and (min-width: 1200px) {
+        width: 60%;
         font-size: 2rem;
     }
 }
@@ -81,4 +90,27 @@
 	100% {
 		background-position: 0% 50%;
 	}
+}
+
+.hands {
+    position: fixed;
+    bottom: -5%;
+    left: 50%;
+    max-width: 80%;
+    transform: translateX(-50%) rotate(90deg);
+
+    @media screen and (min-width: 576px) {
+        max-width: 60%;
+    }
+
+    @media screen and (min-width: 900px) {
+        left: initial;
+        right: -5%;
+        bottom: 50%;
+        transform: translateY(50%) rotate(0);
+    }
+
+    @media screen and (min-width: 1200px) {
+        max-width: 100%;
+    }
 }
