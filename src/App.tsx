@@ -4,6 +4,7 @@ import GitHub from './assets/icons/GitHub';
 import Hands from './assets/img/Hands.png';
 import Button from './components/Button';
 import { GITHUB_REPO_LINK } from './resources/constants';
+import Sudoku from './Sudoku/DemonDaddy22/ReactJS';
 
 const App = () => {
     const handleForkButtonClick = useCallback(() => {
@@ -12,7 +13,7 @@ const App = () => {
 
     return (
         <section className="main">
-            <header className="header">
+            {/* <header className="header">
                 <h1 className="title">Front-End-Game</h1>
                 <h4 className="subtitle">
                     The End Game of the Front End Interviews!
@@ -27,7 +28,8 @@ const App = () => {
                     Fork
                 </Button>
             </header>
-            <img src={Hands} alt="hands" className="hands" />
+            <img src={Hands} alt="hands" className="hands" /> */}
+            <Sudoku />
         </section>
     );
 };
