@@ -1,0 +1,16 @@
+.puzzleContainer {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    flex-direction: column;
+}
+
+.puzzleRow {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
