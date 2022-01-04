@@ -1,12 +1,13 @@
 // TODO - read sudoku puzzles array once and store it in localStorage - DONE
 // TODO - get a random puzzle from the array - DONE
-// TODO - create a 9x9 board, where (i,j)th cell with value 0 is an editable input field, and remaining are disabled
-// TODO - keep track of all the move sequences of the user
+// TODO - create a 9x9 board, where cell with value 0 is an editable input field, and remaining are disabled - DONE
+// TODO - keep track of all the move sequences of the user - DONE
 // TODO - maintain 2 arrays
 //        where 1 array stores original moves, and other one stores moves with manipulations like undo/redo
-// TODO - if user fills a value in any input field, then disable the field once it is not empty and out of focus
+// TODO - if user fills a value in any input field, then disable the field - DONE
 // TODO - if user completes the puzzle successfully, animate the puzzle before resetting it
-// TODO - for resetting, take some other puzzle and create a new board using it
+// TODO - for resetting, take some other puzzle and create a new board using it - DONE
+// TODO - show number of moves, blocks left, reset button
 
 import React, { useCallback, useEffect, useState } from 'react';
 import { createListOfSize } from '../../../utils';
@@ -19,6 +20,7 @@ const Sudoku: React.FC<{}> = () => {
     const [sudokuPuzzles, setSudokuPuzzles] = useState<Array<Sudoku> | null>(
         null
     );
+    const [blocksLeft, setBlocksLeft] = useState<number | null>(null);
     const [originalMoves, setOriginalMoves] = useState<Array<Move>>([]);
     const [manipulatedMoves, setManipulatedMoves] = useState<Array<Move>>([]);
 
@@ -30,24 +32,19 @@ const Sudoku: React.FC<{}> = () => {
             const randomIndex: number = Math.floor(
                 Math.random() * sudokuPuzzles.length
             );
-            setPuzzle(() => sudokuPuzzles[randomIndex]);
+            const sudokuPuzzle = sudokuPuzzles[randomIndex];
+            const numberOfBlocksLeft = sudokuPuzzle.quizzes
+                ?.split('')
+                ?.reduce((accu, curr) => (curr == '0' ? accu + 1 : accu), 0);
+            setPuzzle(() => sudokuPuzzle);
+            setBlocksLeft(() => numberOfBlocksLeft);
         }
     }, [sudokuPuzzles]);
 
-    useEffect(() => {
-        let puzzlesFromStorage: any = localStorage.getItem('sudokuPuzzles');
-        if (!puzzlesFromStorage) {
-            puzzlesFromStorage = puzzles;
-            localStorage.setItem('sudokuPuzzles', JSON.stringify(puzzles));
-        }
-        if (typeof puzzlesFromStorage === 'string') {
-            puzzlesFromStorage = JSON.parse(puzzlesFromStorage);
-        }
-        setSudokuPuzzles(() => puzzlesFromStorage?.sudokuPuzzles || []);
-    }, []);
-
-    useEffect(() => {
+    const resetGame = useCallback(() => {
         setSudokuPuzzle();
+        setOriginalMoves((prevMoves) => []);
+        setManipulatedMoves((prevMoves) => []);
     }, [setSudokuPuzzle]);
 
     const handleValueChange = useCallback(
@@ -70,9 +67,35 @@ const Sudoku: React.FC<{}> = () => {
                 ...prevMoves,
                 { index, value },
             ]);
+            setBlocksLeft((prevBlocksLeft) => (prevBlocksLeft || 0) - 1);
         },
         []
     );
+
+    useEffect(() => {
+        let puzzlesFromStorage: any = localStorage.getItem('sudokuPuzzles');
+        if (!puzzlesFromStorage) {
+            puzzlesFromStorage = puzzles;
+            localStorage.setItem('sudokuPuzzles', JSON.stringify(puzzles));
+        }
+        if (typeof puzzlesFromStorage === 'string') {
+            puzzlesFromStorage = JSON.parse(puzzlesFromStorage);
+        }
+        setSudokuPuzzles(() => puzzlesFromStorage?.sudokuPuzzles || []);
+    }, []);
+
+    useEffect(() => {
+        setSudokuPuzzle();
+    }, [setSudokuPuzzle]);
+
+    useEffect(() => {
+        if (blocksLeft === 0 && puzzle) {
+            // TODO - add meaningful indicator
+            alert(
+                puzzle.quizzes === puzzle.solutions ? 'You won!' : 'You lost!'
+            );
+        }
+    }, [blocksLeft, puzzle]);
 
     return puzzle ? (
         <div className={classes.puzzleContainer}>
