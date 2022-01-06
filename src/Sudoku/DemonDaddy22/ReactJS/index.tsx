@@ -3,13 +3,14 @@
 // TODO - create a 9x9 board, where cell with value 0 is an editable input field, and remaining are disabled - DONE
 // TODO - keep track of all the move sequences of the user - DONE
 // TODO - maintain 2 arrays
-//        where 1 array stores original moves, and other one stores moves with manipulations like undo/redo
+//        where 1 array stores original moves, and other one stores moves with manipulations like undo/redo - DONE
 // TODO - if user fills a value in any input field, then disable the field - DONE
-// TODO - if user completes the puzzle successfully, animate the puzzle before resetting it
 // TODO - for resetting, take some other puzzle and create a new board using it - DONE
-// TODO - show number of moves, blocks left, reset button
+// TODO - show number of moves, blocks left, reset button - DONE
+// TODO - persist current game in localStorage
 
 import React, { useCallback, useEffect, useState } from 'react';
+import Button from '../../../components/Button';
 import { createListOfSize } from '../../../utils';
 import puzzles from '../sudoku.json';
 import Cell from './components/Cell';
@@ -20,6 +21,7 @@ const Sudoku: React.FC<{}> = () => {
     const [sudokuPuzzles, setSudokuPuzzles] = useState<Array<Sudoku> | null>(
         null
     );
+    const [numMoves, setNumMoves] = useState<number>(0);
     const [blocksLeft, setBlocksLeft] = useState<number | null>(null);
     const [originalMoves, setOriginalMoves] = useState<Array<Move>>([]);
     const [manipulatedMoves, setManipulatedMoves] = useState<Array<Move>>([]);
@@ -43,9 +45,58 @@ const Sudoku: React.FC<{}> = () => {
 
     const resetGame = useCallback(() => {
         setSudokuPuzzle();
+        setNumMoves(0);
         setOriginalMoves((prevMoves) => []);
         setManipulatedMoves((prevMoves) => []);
     }, [setSudokuPuzzle]);
+
+    const handleUndo = useCallback(() => {
+        if (manipulatedMoves.length) {
+            const manipulatedMovesCopy = [...manipulatedMoves];
+            const lastMove = manipulatedMovesCopy.pop();
+            const indexToReset = lastMove?.index || 0;
+            setPuzzle((prevPuzzleSnap) => {
+                let newPuzzleSnap = prevPuzzleSnap;
+                if (prevPuzzleSnap) {
+                    newPuzzleSnap = {
+                        quizzes:
+                            prevPuzzleSnap.quizzes?.slice(0, indexToReset) +
+                            '0' +
+                            prevPuzzleSnap.quizzes?.slice(indexToReset + 1),
+                        solutions: prevPuzzleSnap.solutions,
+                    };
+                }
+                return newPuzzleSnap;
+            });
+            setManipulatedMoves(() => manipulatedMovesCopy);
+            setBlocksLeft((prevBlocks) => (prevBlocks || 0) + 1);
+            setNumMoves((prevMoves) => prevMoves + 1);
+        }
+    }, [manipulatedMoves]);
+
+    const handleRedo = useCallback(() => {
+        if (manipulatedMoves.length < originalMoves.length) {
+            const manipulatedMovesCopy = [...manipulatedMoves];
+            const redoMove = { ...originalMoves[manipulatedMovesCopy.length] };
+            manipulatedMovesCopy.push({ ...redoMove });
+            setPuzzle((prevPuzzleSnap) => {
+                let newPuzzleSnap = prevPuzzleSnap;
+                if (prevPuzzleSnap) {
+                    newPuzzleSnap = {
+                        quizzes:
+                            prevPuzzleSnap.quizzes?.slice(0, redoMove.index) +
+                            redoMove.value +
+                            prevPuzzleSnap.quizzes?.slice(redoMove.index + 1),
+                        solutions: prevPuzzleSnap.solutions,
+                    };
+                }
+                return newPuzzleSnap;
+            });
+            setManipulatedMoves(() => manipulatedMovesCopy);
+            setBlocksLeft((prevBlocks) => (prevBlocks || 0) - 1);
+            setNumMoves((prevMoves) => prevMoves + 1);
+        }
+    }, [manipulatedMoves, originalMoves]);
 
     const handleValueChange = useCallback(
         (index: number, value: number | string) => {
@@ -67,6 +118,7 @@ const Sudoku: React.FC<{}> = () => {
                 ...prevMoves,
                 { index, value },
             ]);
+            setNumMoves((prevMoves) => prevMoves + 1);
             setBlocksLeft((prevBlocksLeft) => (prevBlocksLeft || 0) - 1);
         },
         []
@@ -90,15 +142,20 @@ const Sudoku: React.FC<{}> = () => {
 
     useEffect(() => {
         if (blocksLeft === 0 && puzzle) {
-            // TODO - add meaningful indicator
             alert(
-                puzzle.quizzes === puzzle.solutions ? 'You won!' : 'You lost!'
+                puzzle.quizzes === puzzle.solutions
+                    ? 'You correctly solved the puzzle!'
+                    : 'You came close to solving the puzzle correctly!'
             );
         }
     }, [blocksLeft, puzzle]);
 
     return puzzle ? (
         <div className={classes.puzzleContainer}>
+            <div className={classes.infoContainer}>
+                <div className={classes.info}>Number of Moves: {numMoves}</div>
+                <div className={classes.info}>Blocks Left: {blocksLeft}</div>
+            </div>
             {puzzleRow.map((_, rowIndex) => {
                 return (
                     <div key={`row-${rowIndex}`} className={classes.puzzleRow}>
@@ -119,6 +176,21 @@ const Sudoku: React.FC<{}> = () => {
                     </div>
                 );
             })}
+            <div className={classes.buttonsContainer}>
+                <Button
+                    disabled={originalMoves.length <= manipulatedMoves.length}
+                    onClick={handleRedo}
+                >
+                    Redo
+                </Button>
+                <Button
+                    disabled={manipulatedMoves.length <= 0}
+                    onClick={handleUndo}
+                >
+                    Undo
+                </Button>
+                <Button onClick={resetGame}>Reset</Button>
+            </div>
         </div>
     ) : null;
 };
