@@ -1,11 +1,11 @@
 interface Sudoku {
-    quizzes: string;
-    solutions: string;
+    quizzes?: string;
+    solutions?: string;
 }
 
 interface Cell {
     index: number;
-    data: number | string;
+    data?: number | string;
     onChange: (...args: any[]) => any;
 }
 
