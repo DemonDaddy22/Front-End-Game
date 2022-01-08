@@ -1,0 +1,33 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: #221122;
+    padding: 1rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#star {
+    display: flex;
+    align-items: center;
+}
+
+#display-star {
+    color: #FFF;
+    margin-top: 1rem;
+}
+
+.fa-star-o:before {
+    font-size: 2.5rem;
+    content: "\f006";
+    color: #5f6368;
+}
+
+.fa-star:before {
+    font-size: 2.5rem;
+    content: "\f005";
+    color: #d56e0c;
+}
