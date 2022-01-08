@@ -12,9 +12,16 @@ const PlayArea = (props) => {
     };
     return (
         <div className={classes.wrapper}>
-            {game.map((item, index) => (
-                <Input key={index} value={item} handleInputChange={handleInputChange} />
-            ))}
+            <div className={classes.gameWrapper}>
+                {game.map((item, index) => (
+                    <Input
+                        key={index}
+                        value={item}
+                        index={index}
+                        handleInputChange={handleInputChange}
+                    />
+                ))}
+            </div>
         </div>
     );
 };

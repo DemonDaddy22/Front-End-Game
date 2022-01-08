@@ -1,11 +1,11 @@
 import classes from './styles.module.css';
 
 const Input = (props) => {
-    const {key, value, handleInputChange} = props;
+    const { index, value, handleInputChange } = props;
 
-    const handleChange = e => handleInputChange(e.target.value, key);
+    const handleChange = e => handleInputChange(e.target.value, index);
     return (
-        <input type='text' value={value} maxLength={1} onChange={handleChange} />
+        <input className={classes.wrapper} type='text' value={value} maxLength={1} onChange={handleChange} />
     );
 };
 
