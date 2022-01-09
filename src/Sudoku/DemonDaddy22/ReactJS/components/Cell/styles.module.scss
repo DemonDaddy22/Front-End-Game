@@ -1,0 +1,17 @@
+@import '../../../../../resources/constants.scss';
+
+.cell {
+    width: 3rem;
+    height: 3rem;
+    padding: 0.5rem;
+    border: 1px solid $WHITE;
+    border-radius: 2px;
+    color: $WHITE;
+    font-size: 1rem;
+    background: transparent;
+    outline: none;
+
+    &:disabled {
+        background-color: rgba($color: $WHITE, $alpha: 0.2);
+    }
+}
