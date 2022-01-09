@@ -6,11 +6,19 @@ const Input = (props) => {
     const handleChange = (e) => {
         let sudoku = JSON.parse(localStorage.getItem('sudoku'));
         if (e.target.value !== '') {
-            sudoku[0][2]['undo'].push({ 'index': index, 'prev': value, 'current': e.target.value });
+            sudoku[0][2]['undo'].push({
+                index: index,
+                prev: value,
+                current: e.target.value,
+            });
             localStorage.setItem('sudoku', JSON.stringify(sudoku));
             handleInputChange(e.target.value, index);
         } else {
-            sudoku[0][2]['undo'].push({ 'index': index, 'prev': value, 'current': 0 });
+            sudoku[0][2]['undo'].push({
+                index: index,
+                prev: value,
+                current: 0,
+            });
             localStorage.setItem('sudoku', JSON.stringify(sudoku));
             handleInputChange(0, index);
         }
