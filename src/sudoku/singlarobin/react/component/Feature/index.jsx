@@ -1,20 +1,29 @@
 import classes from './styles.module.css';
-import Button from '../Button';
+import Button from '../../../../../components/Button';
 
 const Feature = (props) => {
     const { handleUndo, handleRedo, handleReset } = props;
 
     return (
         <div className={classes.wrapper}>
-            <div className={classes.buttonWrapper}>
-                <Button handleClick={handleReset}>RESET</Button>
-            </div>
-            <div className={classes.buttonWrapper}>
-                <Button handleClick={handleUndo}>UNDO</Button>
-            </div>
-            <div className={classes.buttonWrapper}>
-                <Button handleClick={handleRedo}>REDO</Button>
-            </div>
+            <Button
+                style={{ backgroundColor: 'transparent' }}
+                onClick={handleReset}
+            >
+                RESET
+            </Button>
+            <Button
+                style={{ backgroundColor: 'transparent' }}
+                onClick={handleUndo}
+            >
+                UNDO
+            </Button>
+            <Button
+                style={{ backgroundColor: 'transparent' }}
+                onClick={handleRedo}
+            >
+                REDO
+            </Button>
         </div>
     );
 };

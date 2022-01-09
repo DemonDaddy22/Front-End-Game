@@ -7,7 +7,7 @@ const PlayArea = (props) => {
     const handleInputChange = (value, index) => {
         game[index] = parseInt(value);
         let sudoku = JSON.parse(localStorage.getItem('sudoku'));
-        sudoku[0][1]['game'][index] = parseInt(value);
+        sudoku[1]['game'][index] = parseInt(value);
         localStorage.setItem('sudoku', JSON.stringify(sudoku));
 
         const element = document.getElementById(`${index}`);
@@ -31,6 +31,13 @@ const PlayArea = (props) => {
                         handleInputChange={handleInputChange}
                     />
                 ))}
+                <div
+                    style={{
+                        height: '0.5px',
+                        width: '315px',
+                        backgroundColor: 'black',
+                    }}
+                />
             </div>
         </div>
     );

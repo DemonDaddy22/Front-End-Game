@@ -4,7 +4,7 @@ import PlayArea from '../PlayArea';
 import classes from './styles.module.css';
 import { SUDOKU_API, DIFFICULTY } from '../../constants';
 import RadioButton from '../RadioButton';
-import Button from '../Button';
+import Button from '../../../../../components/Button';
 import Loader from '../Loader';
 
 const Generate = () => {
@@ -25,16 +25,16 @@ const Generate = () => {
         setUpdatedIndex(index);
 
         let sudoku = JSON.parse(localStorage.getItem('sudoku'));
-        setUndo(sudoku[0][2]['undo']);
+        setUndo(sudoku[2]['undo']);
     };
 
     useEffect(() => {
         let sudoku = JSON.parse(localStorage.getItem('sudoku'));
         if (sudoku !== null && sudoku.length !== 0) {
-            setSolution(sudoku[0][0]['solution']);
-            setGame(sudoku[0][1]['game']);
-            setUndo(sudoku[0][2]['undo']);
-            setRedo(sudoku[0][3]['redo']);
+            setSolution(sudoku[0]['solution']);
+            setGame(sudoku[1]['game']);
+            setUndo(sudoku[2]['undo']);
+            setRedo(sudoku[3]['redo']);
             setStarted(true);
         } else {
             if (started) generateSudokuApiCall();
@@ -58,9 +58,9 @@ const Generate = () => {
         let updatedRedoList = [...redo, operation];
 
         let sudoku = JSON.parse(localStorage.getItem('sudoku'));
-        sudoku[0][1]['game'] = currentGame;
-        sudoku[0][2]['undo'] = updatedUndoList;
-        sudoku[0][3]['redo'] = updatedRedoList;
+        sudoku[1]['game'] = currentGame;
+        sudoku[2]['undo'] = updatedUndoList;
+        sudoku[3]['redo'] = updatedRedoList;
         localStorage.setItem('sudoku', JSON.stringify(sudoku));
 
         setUpdatedIndex(index);
@@ -82,9 +82,9 @@ const Generate = () => {
         let updatedRedoList = redo.slice(0, -1);
         let updatedUndoList = [...undo, operation];
         let sudoku = JSON.parse(localStorage.getItem('sudoku'));
-        sudoku[0][1]['game'] = currentGame;
-        sudoku[0][2]['undo'] = updatedUndoList;
-        sudoku[0][3]['redo'] = updatedRedoList;
+        sudoku[1]['game'] = currentGame;
+        sudoku[2]['undo'] = updatedUndoList;
+        sudoku[3]['redo'] = updatedRedoList;
         localStorage.setItem('sudoku', JSON.stringify(sudoku));
 
         setUpdatedIndex(index);
@@ -111,15 +111,15 @@ const Generate = () => {
         )
             .then((response) => response.json())
             .then((data) => {
-                console.log(data);
-
                 let sudoko = [];
-                sudoko.push([
-                    { solution: data.response['solution'].flat() },
-                    { game: data.response['unsolved-sudoku'].flat() },
-                    { undo: [] },
-                    { redo: [] },
-                ]);
+                sudoko.push(
+                    ...[
+                        { solution: data.response['solution'].flat() },
+                        { game: data.response['unsolved-sudoku'].flat() },
+                        { undo: [] },
+                        { redo: [] },
+                    ]
+                );
                 localStorage.setItem('sudoku', JSON.stringify(sudoko));
 
                 setGame(data.response['unsolved-sudoku'].flat());
@@ -139,6 +139,9 @@ const Generate = () => {
                     <Loader />
                 ) : (
                     <div className={classes.wrapper}>
+                        <div className={classes.difficulty}>
+                            DIFFICULTY- {difficulty.toUpperCase()}
+                        </div>
                         <Feature
                             handleUndo={handleUndo}
                             handleRedo={handleRedo}
@@ -177,7 +180,7 @@ const Generate = () => {
                             margin: '0.5rem 2rem 1rem',
                             padding: '0.5rem 0.75rem',
                         }}
-                        handleClick={handleFormSubmit}
+                        onClick={handleFormSubmit}
                     >
                         Submit
                     </Button>
