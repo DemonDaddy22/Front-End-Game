@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import { useCallback } from 'react';
 import './App.scss';
 import GitHub from './assets/icons/GitHub';
 import Hands from './assets/img/Hands.png';
