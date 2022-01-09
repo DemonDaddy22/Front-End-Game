@@ -2,8 +2,8 @@ import classes from './styles.module.css';
 
 const Input = (props) => {
     const { index, value, handleInputChange } = props;
+
     const handleChange = (e) => {
-        console.log(e.target.value);
         let sudoku = JSON.parse(localStorage.getItem('sudoku'));
         if (e.target.value !== '') {
             sudoku[0][2]['undo'].push({ 'index': index, 'prev': value, 'current': e.target.value });
@@ -15,6 +15,7 @@ const Input = (props) => {
             handleInputChange(0, index);
         }
     };
+
     return (
         <input
             className={classes.wrapper}

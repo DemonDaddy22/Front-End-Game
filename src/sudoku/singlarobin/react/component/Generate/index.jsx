@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import Feature from '../Feature';
 import PlayArea from '../PlayArea';
 import classes from './styles.module.css';
@@ -23,12 +23,14 @@ const Generate = () => {
         setGame(game);
         setCount(count + 1);
         setUpdatedIndex(index);
+
+        let sudoku = JSON.parse(localStorage.getItem('sudoku'));
+        setUndo(sudoku[0][2]['undo']);
     };
 
     useEffect(() => {
-        console.log('localStorage', JSON.parse(localStorage.getItem('sudoku')));
         let sudoku = JSON.parse(localStorage.getItem('sudoku'));
-        if (sudoku.length !== 0) {
+        if (sudoku !== null && sudoku.length !== 0) {
             setSolution(sudoku[0][0]['solution']);
             setGame(sudoku[0][1]['game']);
             setUndo(sudoku[0][2]['undo']);
@@ -42,11 +44,58 @@ const Generate = () => {
     const handleFormSubmit = () => setStarted(!started);
 
     const handleUndo = () => {
-        console.log('undo');
+        if (undo.length === 0) {
+            alert('Not Possible');
+            return;
+        }
+        let operation = undo[undo.length - 1];
+
+        let index = operation['index'];
+        let currentGame = game;
+        currentGame[index] = operation['prev'];
+
+        let updatedUndoList = undo.slice(0, -1);
+        let updatedRedoList = [...redo, operation];
+
+        let sudoku = JSON.parse(localStorage.getItem('sudoku'));
+        sudoku[0][1]['game'] = currentGame;
+        sudoku[0][2]['undo'] = updatedUndoList;
+        sudoku[0][3]['redo'] = updatedRedoList;
+        localStorage.setItem('sudoku', JSON.stringify(sudoku));
+
+        setUpdatedIndex(index);
+        setUndo(updatedUndoList);
+        setRedo(updatedRedoList);
+        setGame(currentGame);
     };
 
-    const handleRedo = () => {};
-    const handleReset = () => {};
+    const handleRedo = () => {
+        if (redo.length === 0) {
+            alert('Not Possible');
+            return;
+        }
+        let operation = redo[redo.length - 1];
+        let index = operation['index'];
+        let currentGame = game;
+        currentGame[index] = operation['current'];
+
+        let updatedRedoList = redo.slice(0, -1);
+        let updatedUndoList = [...undo, operation];
+        let sudoku = JSON.parse(localStorage.getItem('sudoku'));
+        sudoku[0][1]['game'] = currentGame;
+        sudoku[0][2]['undo'] = updatedUndoList;
+        sudoku[0][3]['redo'] = updatedRedoList;
+        localStorage.setItem('sudoku', JSON.stringify(sudoku));
+
+        setUpdatedIndex(index);
+        setUndo(updatedUndoList);
+        setRedo(updatedRedoList);
+        setGame(currentGame);
+    };
+    const handleReset = () => {
+        localStorage.setItem('sudoku', JSON.stringify([]));
+        setStarted(false);
+    };
 
     const generateSudokuApiCall = () => {
         setLoading(true);
@@ -96,6 +145,7 @@ const Generate = () => {
                             handleReset={handleReset}
                         />
                         <PlayArea
+                            updatedIndex={updatedIndex}
                             game={game}
                             solution={solution}
                             count={count}
