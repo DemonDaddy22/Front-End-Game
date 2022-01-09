@@ -4,12 +4,12 @@ import classes from './styles.module.css';
 
 const PlayArea = (props) => {
     const { game, updatePlayArea } = props;
-    // console.log(game);
 
     const handleInputChange = (value, index) => {
-        game[index] = value;
-        updatePlayArea(game);
+        game[index] = parseInt(value);
+        updatePlayArea(game, index);
     };
+
     return (
         <div className={classes.wrapper}>
             <div className={classes.gameWrapper}>

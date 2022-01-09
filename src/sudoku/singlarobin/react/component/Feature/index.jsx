@@ -3,9 +3,10 @@ import classes from './styles.module.css';
 import Button from '../Button';
 
 const Feature = (props) => {
-    const handleReset = (e) => console.log('reset');
-    const handleUndo = (e) => console.log('undo');
-    const handleRedo = (e) => console.log('redo');
+    const { handleUndo, handleRedo, handleReset } = props;
+    // const handleReset = (e) => console.log('reset');
+    // const handleUndo = (e) => console.log('undo');
+    // const handleRedo = (e) => console.log('redo');
 
     return (
         <div className={classes.wrapper}>
