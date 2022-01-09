@@ -97,6 +97,7 @@ const Generate = () => {
                         />
                         <PlayArea
                             game={game}
+                            solution={solution}
                             count={count}
                             updatePlayArea={updatePlayArea}
                         />
