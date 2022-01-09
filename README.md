@@ -10,7 +10,6 @@ List of projects added so far:
 
 - [Sudoku](/src/Sudoku) -> Implement a 9x9 Sudoku puzzle with the following conditions
 
-  - user can choose difficulty between _Easy_, _Medium_, or _Hard_, at the start of the game
   - user can perform operations like undo and redo
   - a reset button to reset the game
   - track number of moves
