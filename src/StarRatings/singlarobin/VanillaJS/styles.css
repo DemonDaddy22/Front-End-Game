@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #190b45;
+}
+
+.container {
+    width: inherit;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    display: flex;
+    justify-content: space-around;
+}
+
+.star {
+    font-size: 3rem !important;
+    color: #808080;
+    padding: 0rem 0.25rem;
+}
+
+.number {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+    margin: 1rem auto;
+    text-align: start;
+}
+
+.color {
+    color: #d9d920;
+}
