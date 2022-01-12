@@ -8,15 +8,15 @@ This repository consists of various UI exercises which are frequently asked in m
 
 List of projects added so far:
 
-- [Sudoku](/src/Sudoku) -> Implement a 9x9 Sudoku puzzle with the following conditions
+-   [Sudoku](/src/Sudoku) -> Implement a 9x9 Sudoku puzzle with the following conditions
 
-  - user can perform operations like undo and redo
-  - a reset button to reset the game
-  - track number of moves
-  - state of the game needs to be persisted
+    -   user can perform operations like undo and redo
+    -   a reset button to reset the game
+    -   track number of moves
+    -   state of the game needs to be persisted
 
-- [Pixel Art](/src/PixelArt) -> Implement pixel art board with the following conditions
+-   [Pixel Art](/src/PixelArt) -> Implement pixel art board with the following conditions
 
-  - user can select a colour from colour palette
-  - on clicking an empty cell, selected colour gets filled in the cell
-  - on dragging over the cells, a constant faded colour gets filled in the cells
+    -   user can select a colour from colour palette
+    -   on clicking an empty cell, selected colour gets filled in the cell
+    -   on dragging over the cells, a constant faded colour gets filled in the cells
