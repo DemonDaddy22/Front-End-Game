@@ -14,3 +14,9 @@ List of projects added so far:
   - a reset button to reset the game
   - track number of moves
   - state of the game needs to be persisted
+
+- [Pixel Art](/src/PixelArt) -> Implement pixel art board with the following conditions
+
+  - user can select a colour from colour palette
+  - on clicking an empty cell, selected colour gets filled in the cell
+  - on dragging over the cells, a constant faded colour gets filled in the cells
