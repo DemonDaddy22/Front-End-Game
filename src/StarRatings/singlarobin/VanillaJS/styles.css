@@ -5,34 +5,12 @@ body {
     background-color: #190b45;
 }
 
-.container {
-    width: inherit;
-    height: inherit;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.fa-star-o:before {
+    content: "\f006";
+    color: #5f6368;
 }
 
-.content {
-    display: flex;
-    justify-content: space-around;
-}
-
-.star {
-    font-size: 3rem !important;
-    color: #808080;
-    padding: 0rem 0.25rem;
-}
-
-.number {
-    font-size: 2rem;
-    font-weight: 600;
-    color: #fff;
-    margin: 1rem auto;
-    text-align: start;
-}
-
-.color {
-    color: #d9d920;
+.fa-star:before {
+    content: "\f005";
+    color: #d56e0c;
 }

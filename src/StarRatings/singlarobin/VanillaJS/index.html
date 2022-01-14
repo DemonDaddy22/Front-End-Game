@@ -8,20 +8,19 @@
         <link rel="stylesheet" href="./styles.css" />
         <link
             rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+            href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"
         />
     </head>
     <body>
-        <div class="container">
-            <div class="content">
-                <i class="fa fa-star-o star" data-key="1"></i>
-                <i class="fa fa-star-o star" data-key="2"></i>
-                <i class="fa fa-star-o star" data-key="3"></i>
-                <i class="fa fa-star-o star" data-key="4"></i>
-                <i class="fa fa-star-o star" data-key="5"></i>
-            </div>
-            <div class="number" id="number"></div>
-        </div>
-        <script src="index.js"></script>
+        <div id="star"></div>
+        <div id="display-star"></div>
+
+        <script src="script.js"></script>
+        <script>
+            function getStar(value) {
+                document.getElementById('display-star').innerHTML = value;
+            }
+            new Star('#star', 5, getStar);
+        </script>
     </body>
 </html>
