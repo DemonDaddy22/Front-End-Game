@@ -3,6 +3,21 @@ body {
     width: 100vw;
     height: 100vh;
     background-color: #190b45;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+#star {
+    display: flex;
+    align-items: center;
+}
+
+#display-star {
+    color: #fff;
+    margin-top: 0.25rem;
 }
 
 .fa-star-o:before {
