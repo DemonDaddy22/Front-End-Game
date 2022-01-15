@@ -14,12 +14,12 @@ function Star(el, count, callback) {
         element.setAttribute('id', i);
         element.classList.add('fa', 'fa-star-o');
         starWrapper.appendChild(element);
-        element.addEventListener('click', (e) =>
-            handleClick(e, count, callback)
-        );
-        element.addEventListener('mouseover', (e) => handleHoverEnter(e));
-        element.addEventListener('mouseout', (e) => handleHoverOut(e));
     }
+    starWrapper.addEventListener('click', (e) =>
+        handleClick(e, count, callback)
+    );
+    starWrapper.addEventListener('mouseover', handleHoverEnter);
+    starWrapper.addEventListener('mouseout', handleHoverOut);
 }
 
 function handleHoverEnter(e) {
