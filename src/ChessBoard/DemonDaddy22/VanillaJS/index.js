@@ -23,9 +23,9 @@
     const diagonalTraversal = (row, col, highlightPath = true) => {
         // math.min(i, j), subtract min from both, whichever becomes 0, start from there and add 1 to both
         // for diagonal 1 (\)
-        const minDiagonal1 = Math.min(row, col);
-        let startRow1 = row - minDiagonal1;
-        let startCol1 = col - minDiagonal1;
+        const min = Math.min(row, col);
+        let startRow1 = row - min;
+        let startCol1 = col - min;
         while (startRow1 < BOARD_SIZE && startCol1 < BOARD_SIZE) {
             const block = chessBoardBlocks[startRow1 * BOARD_SIZE + startCol1];
             if (highlightPath) {
