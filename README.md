@@ -8,9 +8,15 @@ This repository consists of various UI exercises which are frequently asked in m
 
 List of projects added so far:
 
-- [Sudoku](/src/Sudoku) -> Implement a 9x9 Sudoku puzzle with the following conditions
+-   [Sudoku](/src/Sudoku) -> Implement a 9x9 Sudoku puzzle with the following conditions
 
-  - user can perform operations like undo and redo
-  - a reset button to reset the game
-  - track number of moves
-  - state of the game needs to be persisted
+    -   user can perform operations like undo and redo
+    -   a reset button to reset the game
+    -   track number of moves
+    -   state of the game needs to be persisted
+
+-   [Star Ratings](/src/StarRatings) -> Create star rating utility using HTML, CSS and JavaScript
+
+    -   Default state must display n unfilled stars
+    -   On hovering over any star, all the stars before that star and that star must get filled till the mouse is over the star
+    -   On clicking a star, all the stars before that star and that star must get filled
