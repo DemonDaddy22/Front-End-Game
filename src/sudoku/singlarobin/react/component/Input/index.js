@@ -5,15 +5,14 @@ const Input = (props) => {
 
     const handleChange = (e) => {
         let sudoku = JSON.parse(localStorage.getItem('sudoku'));
-        if (e.target.value !== '') {
-            sudoku[2]['undo'].push({ 'index': index, 'prev': value, 'current': e.target.value });
-            localStorage.setItem('sudoku', JSON.stringify(sudoku));
-            handleInputChange(e.target.value, index);
-        } else {
-            sudoku[2]['undo'].push({ 'index': index, 'prev': value, 'current': 0 });
-            localStorage.setItem('sudoku', JSON.stringify(sudoku));
-            handleInputChange(0, index);
-        }
+        const targetValue = e.target.value || 0;
+        sudoku[2]['undo'].push({
+            index,
+            prev: value,
+            current: targetValue,
+        });
+        localStorage.setItem('sudoku', JSON.stringify(sudoku));
+        handleInputChange(targetValue, index);
     };
 
     return (

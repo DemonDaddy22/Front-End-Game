@@ -6,22 +6,13 @@ const Feature = (props) => {
 
     return (
         <div className={classes.wrapper}>
-            <Button
-                style={{ backgroundColor: 'transparent' }}
-                onClick={handleReset}
-            >
+            <Button className={classes.button} onClick={handleReset}>
                 RESET
             </Button>
-            <Button
-                style={{ backgroundColor: 'transparent' }}
-                onClick={handleUndo}
-            >
+            <Button className={classes.button} onClick={handleUndo}>
                 UNDO
             </Button>
-            <Button
-                style={{ backgroundColor: 'transparent' }}
-                onClick={handleRedo}
-            >
+            <Button className={classes.button} onClick={handleRedo}>
                 REDO
             </Button>
         </div>

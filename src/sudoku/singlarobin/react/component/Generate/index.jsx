@@ -30,7 +30,7 @@ const Generate = () => {
 
     useEffect(() => {
         let sudoku = JSON.parse(localStorage.getItem('sudoku'));
-        if (sudoku !== null && sudoku.length !== 0) {
+        if (sudoku?.length) {
             setSolution(sudoku[0]['solution']);
             setGame(sudoku[1]['game']);
             setUndo(sudoku[2]['undo']);
@@ -44,19 +44,16 @@ const Generate = () => {
     const handleFormSubmit = () => setStarted(!started);
 
     const handleUndo = () => {
-        if (undo.length === 0) {
+        if (!undo?.length) {
             alert('Not Possible');
             return;
         }
-        let operation = undo[undo.length - 1];
-
-        let index = operation['index'];
+        const operation = undo[undo.length - 1];
+        const index = operation['index'];
         let currentGame = game;
         currentGame[index] = operation['prev'];
-
-        let updatedUndoList = undo.slice(0, -1);
-        let updatedRedoList = [...redo, operation];
-
+        const updatedUndoList = undo.slice(0, -1);
+        const updatedRedoList = [...redo, operation];
         let sudoku = JSON.parse(localStorage.getItem('sudoku'));
         sudoku[1]['game'] = currentGame;
         sudoku[2]['undo'] = updatedUndoList;
@@ -70,17 +67,16 @@ const Generate = () => {
     };
 
     const handleRedo = () => {
-        if (redo.length === 0) {
+        if (!redo?.length) {
             alert('Not Possible');
             return;
         }
-        let operation = redo[redo.length - 1];
-        let index = operation['index'];
+        const operation = redo[redo.length - 1];
+        const index = operation['index'];
         let currentGame = game;
         currentGame[index] = operation['current'];
-
-        let updatedRedoList = redo.slice(0, -1);
-        let updatedUndoList = [...undo, operation];
+        const updatedRedoList = redo.slice(0, -1);
+        const updatedUndoList = [...undo, operation];
         let sudoku = JSON.parse(localStorage.getItem('sudoku'));
         sudoku[1]['game'] = currentGame;
         sudoku[2]['undo'] = updatedUndoList;
@@ -114,8 +110,8 @@ const Generate = () => {
                 let sudoko = [];
                 sudoko.push(
                     ...[
-                        { solution: data.response['solution'].flat() },
-                        { game: data.response['unsolved-sudoku'].flat() },
+                        { solution: data?.response['solution'].flat() },
+                        { game: data?.response['unsolved-sudoku'].flat() },
                         { undo: [] },
                         { redo: [] },
                     ]
@@ -124,10 +120,11 @@ const Generate = () => {
 
                 setGame(data.response['unsolved-sudoku'].flat());
                 setSolution(data.response['solution'].flat());
-                setLoading(false);
             })
             .catch((err) => {
                 console.error(err);
+            })
+            .finally(() => {
                 setLoading(false);
             });
     };
