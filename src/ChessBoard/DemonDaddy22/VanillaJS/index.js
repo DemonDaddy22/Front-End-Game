@@ -21,7 +21,8 @@
 
     // diagonal traversal helper
     const diagonalTraversal = (row, col, highlightPath = true) => {
-        // math.min(i, j), subtract min from both, whichever becomes 0, start from there and add 1 to both
+        // math.min(i, j), subtract min from both, whichever becomes 0,
+        // start from there and add 1 to both
         // for diagonal 1 (\)
         const min = Math.min(row, col);
         let startRow1 = row - min;
