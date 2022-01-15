@@ -1,0 +1,17 @@
+.wrapper {
+    background-color: transparent;
+    font-size: 1rem;
+    color: #000;
+    text-align: center;
+    border: 1px solid #000;
+    padding: 0.5rem;
+}
+
+.wrapper:nth-child(n) {
+    border-right: none;
+    border-bottom: none;
+}
+
+.wrapper:nth-child(9n) {
+    border-right: 1px solid #000;
+}

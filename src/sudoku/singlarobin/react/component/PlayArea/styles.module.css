@@ -1,0 +1,11 @@
+.wrapper {
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 0.5rem;
+}
+
+.gameWrapper {
+    display: grid;
+    grid-template-columns: repeat(9, 35px);
+}
