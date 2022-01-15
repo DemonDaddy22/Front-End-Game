@@ -1,0 +1,25 @@
+.formWrapper {
+    width: 30vw;
+    height: 30vh;
+    background-color: #fff;
+    border-radius: 0.25rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: start;
+    transform: translate(-50%, -50%);
+}
+
+.formHeader {
+    padding: 1rem;
+    color: #23a6d5;
+    font-size: 1.5rem;
+}
+
+.difficulty {
+    color: #fff;
+    background-color: transparent;
+    font-size: 1.5rem;
+    margin: 0rem auto 2rem;
+    text-align: start;
+}
