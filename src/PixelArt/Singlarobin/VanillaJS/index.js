@@ -70,7 +70,6 @@ function handleClick(e, lastRow, color) {
     if (type !== 'cell') return;
     const [row, col] = id.split(' ');
     const element = document.getElementById(id);
-    // console.log(id);
     if (parseInt(row) === lastRow) {
         selectedColor = color[col];
         return;
