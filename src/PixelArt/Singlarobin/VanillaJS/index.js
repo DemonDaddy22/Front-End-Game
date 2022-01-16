@@ -39,12 +39,6 @@ function PixelArt(el, rows, cols) {
         }
     }
 
-    const width = rows * cellWidthInt;
-    const bottomBorder = document.createElement('div');
-    bottomBorder.classList.add('border');
-    bottomBorder.style.width = `${width}px`;
-    gridElement.appendChild(bottomBorder);
-
     gridElement.addEventListener('click', (e) => handleClick(e, rows, color));
     gridElement.addEventListener('mousedown', handleMouseEvent);
     gridElement.addEventListener('mouseover', (e) => handleDrag(e, rows));

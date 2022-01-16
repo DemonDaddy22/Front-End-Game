@@ -20,6 +20,7 @@ body {
 
 #grid {
     display: grid;
+    border-bottom: 1px solid #fff;
 }
 
 .border {
