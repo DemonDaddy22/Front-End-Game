@@ -20,3 +20,9 @@ List of projects added so far:
     -   Default state must display n unfilled stars
     -   On hovering over any star, all the stars before that star and that star must get filled till the mouse is over the star
     -   On clicking a star, all the stars before that star and that star must get filled
+
+-   [Pixel Art](/src/PixelArt) -> Implement pixel art board with the following conditions
+
+    -   user can select a colour from colour palette
+    -   on clicking an empty cell, selected colour gets filled in the cell
+    -   on dragging over the cells, a constant faded colour gets filled in the cells
