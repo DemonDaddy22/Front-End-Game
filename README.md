@@ -15,6 +15,12 @@ List of projects added so far:
     -   track number of moves
     -   state of the game needs to be persisted
 
+-   [Star Ratings](/src/StarRatings) -> Create star rating utility using HTML, CSS and JavaScript
+
+    -   Default state must display n unfilled stars
+    -   On hovering over any star, all the stars before that star and that star must get filled till the mouse is over the star
+    -   On clicking a star, all the stars before that star and that star must get filled
+
 -   [Pixel Art](/src/PixelArt) -> Implement pixel art board with the following conditions
 
     -   user can select a colour from colour palette
