@@ -21,6 +21,12 @@ List of projects added so far:
     -   On hovering over any star, all the stars before that star and that star must get filled till the mouse is over the star
     -   On clicking a star, all the stars before that star and that star must get filled
 
+-   [Pixel Art](/src/PixelArt) -> Implement [pixel art](https://github.com/devkodeio/the-dom-challenge/blob/main/pixel-art/README.md) board with the following conditions
+
+    -   user can select a colour from colour palette
+    -   on clicking an empty cell, selected colour gets filled in the cell
+    -   on dragging over the cells, a constant faded colour gets filled in the cells
+
 -   [Chess Board](/src/ChessBoard) -> Create [chess board](https://github.com/devkodeio/the-dom-challenge/blob/main/chess-board/README.md) exercise
 
     -   Create the board using JavaScript
