@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin: 0;
+}
+
+:root {
+    --cell-width: 50px;
+}
+
+#grid {
+    display: grid;
+}
+
+.border {
+    height: 1px;
+    background: black;
+}
+
+.cell {
+    width: var(--cell-width);
+    height: var(--cell-width);
+    background: #fff;
+}
+
+.cell:nth-child(n) {
+    border-left: 1px solid black;
+    border-top: 1px solid black;
+}
+
+.cell:nth-child(10n) {
+    border-right: 1px solid black;
+}
+
+.color:hover {
+    cursor: pointer;
+}
