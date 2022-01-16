@@ -11,6 +11,7 @@ body {
     align-items: center;
     overflow: hidden;
     margin: 0;
+    background: #011d49;
 }
 
 :root {
@@ -23,22 +24,22 @@ body {
 
 .border {
     height: 1px;
-    background: black;
+    background: #fff;
 }
 
 .cell {
     width: var(--cell-width);
     height: var(--cell-width);
-    background: #fff;
+    background: transparent;
 }
 
 .cell:nth-child(n) {
-    border-left: 1px solid black;
-    border-top: 1px solid black;
+    border-left: 1px solid #fff;
+    border-top: 1px solid #fff;
 }
 
 .cell:nth-child(10n) {
-    border-right: 1px solid black;
+    border-right: 1px solid #fff;
 }
 
 .color:hover {

@@ -17,7 +17,7 @@ function PixelArt(el, rows, cols) {
 
     const color = [];
     for (let i = 0; i < rows; i++) {
-        color.push(`#${getColorValue()}`);
+        color.push(`#${getColorValue(color)}`);
     }
     selectedColor = color[0];
 
@@ -48,8 +48,11 @@ function PixelArt(el, rows, cols) {
     gridElement.addEventListener('dragover', (e) => handleDrag(e, rows));
 }
 
-function getColorValue() {
+function getColorValue(list) {
     let color = Math.floor(Math.random() * 16777215).toString(16);
+    while (color === '011d49' || color === '808080' || list.includes(color)) {
+        color = Math.floor(Math.random() * 16777215).toString(16)
+    }
     return color;
 }
 
