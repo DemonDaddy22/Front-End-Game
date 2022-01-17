@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    background: #fff0a6;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#board {
+    display: flex;
+    flex-direction: column;
+    border: 0.25rem solid #000;
+    padding: 0.15rem;
+    border-radius: 0.5rem;
+    background: #fff;
+}
+
+.boardRow {
+    display: flex;
+}
+
+.cell {
+    width: 3rem;
+    height: 3rem;
+}
+
+.boardRow:nth-of-type(odd) .cell:nth-of-type(even),
+.boardRow:nth-of-type(even) .cell:nth-of-type(odd) {
+    background: #000;
+    border: 1px solid #000;
+}
