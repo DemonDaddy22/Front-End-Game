@@ -15,14 +15,19 @@ List of projects added so far:
     -   track number of moves
     -   state of the game needs to be persisted
 
--   [Star Ratings](/src/StarRatings) -> Create star rating utility using HTML, CSS and JavaScript
+-   [Star Ratings](/src/StarRatings) -> Create [star rating](https://github.com/devkodeio/the-dom-challenge/blob/main/star-rating/README.md) utility
 
     -   Default state must display n unfilled stars
     -   On hovering over any star, all the stars before that star and that star must get filled till the mouse is over the star
     -   On clicking a star, all the stars before that star and that star must get filled
 
--   [Pixel Art](/src/PixelArt) -> Implement pixel art board with the following conditions
+-   [Pixel Art](/src/PixelArt) -> Implement [pixel art](https://github.com/devkodeio/the-dom-challenge/blob/main/pixel-art/README.md) board with the following conditions
 
     -   user can select a colour from colour palette
     -   on clicking an empty cell, selected colour gets filled in the cell
     -   on dragging over the cells, a constant faded colour gets filled in the cells
+
+-   [Chess Board](/src/ChessBoard) -> Create [chess board](https://github.com/devkodeio/the-dom-challenge/blob/main/chess-board/README.md) exercise
+
+    -   Create the board using JavaScript
+    -   On clicking a block, all the blocks on both the diagonals should get highlighted
