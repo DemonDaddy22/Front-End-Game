@@ -1,5 +1,4 @@
 let lastClickedId = null;
-let lastColorList = [];
 const rows = 8;
 
 function ChessBoard() {
@@ -25,48 +24,43 @@ function handleClick(e) {
     if (lastClickedId !== null) {
         //Remove prev Color
         const [prevRow, prevCol] = lastClickedId.split('_');
-        handleDiagonal(parseInt(prevRow), parseInt(prevCol), 'remove');
+        handleDiagonal(parseInt(prevRow), parseInt(prevCol), false);
     }
     //Add Color
     const [currRow, currCol] = id.split('_');
-    handleDiagonal(parseInt(currRow), parseInt(currCol), 'add');
+    handleDiagonal(parseInt(currRow), parseInt(currCol), true);
 };
 
-function updateColor(i, j, operation) {
+function updateColor(i, j, highlight) {
     const id = `${i}_${j}`;
     const cell = document.getElementById(id);
-    if (operation === 'remove') {
-        cell.style.background = lastColorList[0];
-        cell.style.borderColor = lastColorList[0];
-        lastColorList.splice(0, 1);
+    if (highlight) {
+        cell.classList.add('highlight');
     } else {
-        const colorValue = getComputedStyle(cell).backgroundColor;
-        lastColorList.push(colorValue);
-        cell.style.background = 'red';
-        cell.style.borderColor = 'red';
+        cell.classList.remove('highlight');
     }
-}
+};
 
-function handleDiagonal(row, col, operation) {
+function handleDiagonal(row, col, highlight) {
     //left top
     for (let i = row, j = col; i >= 0 && j >= 0; i--, j--) {
-        updateColor(i, j, operation);
+        updateColor(i, j, highlight);
     }
     //left bottom
     for (let i = row + 1, j = col - 1; i < rows && j >= 0; i++, j--) {
-        updateColor(i, j, operation);
+        updateColor(i, j, highlight);
     }
     //right bottom
     for (let i = row + 1, j = col + 1; i < rows && j < rows; i++, j++) {
-        updateColor(i, j, operation);
+        updateColor(i, j, highlight);
     }
     //right top
     for (let i = row - 1, j = col + 1; i >= 0 && j < rows; i--, j++) {
-        updateColor(i, j, operation);
+        updateColor(i, j, highlight);
     }
-    if (operation === 'add') {
+    if (highlight) {
         lastClickedId = `${row}_${col}`;
     }
-}
+};
 
 ChessBoard();

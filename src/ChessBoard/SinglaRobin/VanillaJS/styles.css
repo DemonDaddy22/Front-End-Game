@@ -34,5 +34,8 @@ body {
 .boardRow:nth-of-type(odd) .cell:nth-of-type(even),
 .boardRow:nth-of-type(even) .cell:nth-of-type(odd) {
     background: #000;
-    border: 1px solid #000;
+}
+
+.highlight {
+    background: #ff0000 !important;
 }
