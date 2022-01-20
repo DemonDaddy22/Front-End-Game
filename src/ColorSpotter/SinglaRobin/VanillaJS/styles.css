@@ -1,0 +1,71 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    background: brown;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem;
+}
+
+#score {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+#game-grid {
+    width: 35rem;
+    height: 35rem;
+    border: 0.25rem solid #000;
+    border-radius: 0.5rem;
+    background: #fff;
+    padding: 0.15rem;
+    margin-top: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+}
+
+.grid-row {
+    display: flex;
+    flex: 1 1 auto;
+}
+
+.block {
+    border: 0.1rem solid #fff;
+    flex: 1 1 auto;
+    cursor: pointer;
+}
+
+.shake {
+    animation: shake 0.8s infinite;
+    transform: translate3d(0, 0, 0);
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: translateX(-8px);
+    }
+
+    20%,
+    40%,
+    60%,
+    80%,
+    100% {
+        transform: translateX(8px);
+    }
+}
