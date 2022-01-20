@@ -113,8 +113,8 @@ function PixelArt(el, rows, cols) {
     this.el.append(row);
 
     // add event listeners
-    this.el.addEventListener('click', this.handleCellClick);
-    this.el.addEventListener('mousedown', this.handleCellDragStart);
-    this.el.addEventListener('mouseover', this.handleCellDrag);
-    this.el.addEventListener('mouseup', this.handleCellDragEnd);
+    this.el.addEventListener('click', this.handleCellClick.bind(this));
+    this.el.addEventListener('mousedown', this.handleCellDragStart.bind(this));
+    this.el.addEventListener('mouseover', this.handleCellDrag.bind(this));
+    this.el.addEventListener('mouseup', this.handleCellDragEnd.bind(this));
 }

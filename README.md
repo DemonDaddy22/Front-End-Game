@@ -31,3 +31,9 @@ List of projects added so far:
 
     -   Create the board using JavaScript
     -   On clicking a block, all the blocks on both the diagonals should get highlighted
+
+-   [Color Spotter](/src/ColorSpotter) -> Create [color spotter](https://github.com/devkodeio/the-dom-challenge/blob/main/color-spotter/README.md) game
+
+    -   Create the game board using JavaScript
+    -   On clicking the odd coloured cell, increment the score and increase board size by 1
+    -   On clicking any other cell, reset the score and board size to 4
