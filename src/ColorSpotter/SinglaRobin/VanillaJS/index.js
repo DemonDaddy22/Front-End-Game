@@ -25,7 +25,7 @@ function ColorSpotter(initialRows = 4) {
         return Math.floor(Math.random() * max);
     };
 
-    ColorSpotter.prototype.handleBLockClick = (e) => {
+    ColorSpotter.prototype.handleBlockClick = function (e) {
         const id = e.target.id;
         if (id === this.oddBlockId) {
             this.currentScore++;
@@ -64,8 +64,7 @@ function ColorSpotter(initialRows = 4) {
         }
     }
     this.displayGrid(this.rows);
-    this.grid.addEventListener('click', this.handleBLockClick);
+    this.grid.addEventListener('click', this.handleBlockClick.bind(this));
 }
 
 new ColorSpotter(4);
-
