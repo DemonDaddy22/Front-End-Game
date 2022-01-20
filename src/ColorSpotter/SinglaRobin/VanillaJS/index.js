@@ -13,7 +13,7 @@ function ColorSpotter(initialRows = 4) {
         const color = `hsl(${Math.round(
             360 * hue
         )},${saturation}%, ${lightness}%)`;
-        const oddColor = `hsl(${Math.round(360 * hue)},${saturation}%, 
+        const oddColor = `hsl(${Math.round(360 * hue)},${saturation}%,
         ${lightness + 5}%)`;
         return {
             color,
