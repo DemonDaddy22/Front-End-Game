@@ -17,8 +17,8 @@ function ColorSpotter(initialRows = 4) {
         ${lightness + 5}%)`;
         return {
             color,
-            oddColor
-        }
+            oddColor,
+        };
     };
 
     ColorSpotter.prototype.getRandomNumber = function (max) {
@@ -38,7 +38,7 @@ function ColorSpotter(initialRows = 4) {
             this.displayScore.innerText = this.currentScore;
             this.displayGrid(this.rows);
         }
-    }
+    };
 
     ColorSpotter.prototype.displayGrid = function (row) {
         this.grid.innerHTML = '';
@@ -62,7 +62,7 @@ function ColorSpotter(initialRows = 4) {
             }
             this.grid.appendChild(gridRow);
         }
-    }
+    };
     this.displayGrid(this.rows);
     this.grid.addEventListener('click', this.handleBlockClick.bind(this));
 }
