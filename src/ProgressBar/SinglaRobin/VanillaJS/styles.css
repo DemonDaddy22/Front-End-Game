@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    background: #3a6a6a;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#progress-bar {
+    width: 50vw;
+    height: 8vh;
+    border: none;
+}
+
+progress::-webkit-progress-bar {
+    background-color: #e8e8e8;
+    border-radius: 0.15rem;
+}
+
+progress::-webkit-progress-value {
+    background-color: #0000ff;
+    border-top-left-radius: 0.15rem;
+    border-bottom-left-radius: 0.15rem;
+}
+
+#run-button {
+    font-size: 1.25rem;
+    color: #fff;
+    padding: 0.25rem 0.5rem;
+    border: 0.15rem solid #f8f8f8;
+    background: transparent;
+    margin-top: 1rem;
+}
+
+#run-button:hover {
+    border-color: #0000ff;
+}
