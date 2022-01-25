@@ -26,6 +26,11 @@ body {
     display: flex;
 }
 
+#start-button {
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+}
+
 .block {
     height: 10rem;
     width: 10rem;
@@ -37,6 +42,14 @@ body {
 
 .block:first-of-type {
     border-left: 1px solid #999;
+}
+
+.background-correct {
+    background-color: #318CE7;
+}
+
+.background-incorrect {
+    background-color: #EE3355;
 }
 
 .shake {
