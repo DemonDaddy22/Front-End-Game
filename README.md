@@ -37,3 +37,12 @@ List of projects added so far:
     -   Create the game board using JavaScript
     -   On clicking the odd coloured cell, increment the score and increase board size by 1
     -   On clicking any other cell, reset the score and board size to 4
+
+-   [Memory Game](/src/MemoryGame) -> Create [memory game](https://github.com/devkodeio/the-dom-challenge/blob/main/memory-game/README.md) exercise
+
+    -   Create the memory game using JavaScript
+    -   Number of blocks must be programmatically configurable
+    -   On clicking the start button, randomly highlight blocks
+    -   After the blinking is complete, user must click the blocks in the sequence in which the blinking occurred
+    -   On selecting an incorrect block, shake the blocks and reset the score
+    -   Persist the high score
