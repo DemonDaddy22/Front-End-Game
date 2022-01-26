@@ -6,8 +6,6 @@
     let playCount = 0;
     let isPlaying = false;
 
-    progressBar.style.animationDuration = `${animationDuration}ms`;
-
     const handleBarAnimation = () => {
         isPlaying = true;
         // use animate interface of element to fill the bar
