@@ -135,14 +135,38 @@ const Sudoku: React.FC<{}> = () => {
     const handleValueChange = useCallback(
         (index: number, value: number | string) => {
             const puzzleSnap = { ...puzzle };
-            const newPuzzleSnap = {
-                quizzes:
+            let newOriginalMoves;
+            let quizzes = puzzleSnap?.quizzes;
+            // check for branching
+            // when length of original is not same as manipulated
+            // set original to track new branch
+            if (originalMoves.length !== manipulatedMoves.length) {
+                newOriginalMoves = [
+                    ...originalMoves.slice(0, manipulatedMoves.length),
+                    { index, value },
+                ];
+                const oldMoves = originalMoves.slice(manipulatedMoves.length);
+                oldMoves.forEach((move) => {
+                    quizzes =
+                        quizzes?.slice(0, move.index) +
+                        '0' +
+                        quizzes?.slice(move.index + 1);
+                });
+                quizzes =
+                    quizzes?.slice(0, index) +
+                    `${value}` +
+                    quizzes?.slice(index + 1);
+            } else {
+                newOriginalMoves = [...originalMoves, { index, value }];
+                quizzes =
                     puzzleSnap?.quizzes?.slice(0, index) +
                     `${value}` +
-                    puzzleSnap?.quizzes?.slice(index + 1),
+                    puzzleSnap?.quizzes?.slice(index + 1);
+            }
+            const newPuzzleSnap = {
+                quizzes,
                 solutions: puzzleSnap?.solutions,
             };
-            const newOriginalMoves = [...originalMoves, { index, value }];
             const newManipulatedMoves = [...manipulatedMoves, { index, value }];
             const updatedNumMoves = numMoves + 1;
             setPuzzle(newPuzzleSnap);
