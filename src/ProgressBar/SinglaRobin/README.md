@@ -8,4 +8,4 @@
 
 ![progressbar](https://user-images.githubusercontent.com/36002305/150569108-cadc203d-ebc9-4a06-80e9-fd831353650a.png)
 
-![progressBar](https://user-images.githubusercontent.com/36002305/150569137-d7d87ad6-4fc7-4967-8627-f7cd3f097be2.gif)
+![progressBar](https://user-images.githubusercontent.com/36002305/151164024-46b97edc-3141-4e38-a6b0-386d9362c867.gif)
