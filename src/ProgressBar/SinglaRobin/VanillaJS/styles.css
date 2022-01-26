@@ -13,32 +13,30 @@ body {
     align-items: center;
 }
 
-#progress-bar {
-    width: 50vw;
+#progress-wrapper {
+    width: 70vw;
     height: 8vh;
-    border: none;
+    max-width: 500px;
+    background: #e8e8e8;
+    display: flex;
 }
 
-progress::-webkit-progress-bar {
-    background-color: #e8e8e8;
-    border-radius: 0.15rem;
-}
-
-progress::-webkit-progress-value {
-    background-color: #0000ff;
-    border-top-left-radius: 0.15rem;
-    border-bottom-left-radius: 0.15rem;
+#progress-bar {
+    width: 0;
+    height: inherit;
+    background: #0000ff;
 }
 
 #run-button {
     font-size: 1.25rem;
-    color: #fff;
-    padding: 0.25rem 0.5rem;
-    border: 0.15rem solid #f8f8f8;
-    background: transparent;
+    color: #3a6a6a;
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.25rem;
+    border: 0.25rem solid #fff;
+    background: #fff;
     margin-top: 1rem;
 }
 
 #run-button:hover {
-    border-color: #0000ff;
+    cursor: pointer;
 }
