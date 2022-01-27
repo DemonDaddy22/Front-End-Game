@@ -1,0 +1,42 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    background: #3a6a6a;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#progress-wrapper {
+    width: 70vw;
+    height: 8vh;
+    max-width: 500px;
+    background: #e8e8e8;
+    display: flex;
+}
+
+#progress-bar {
+    width: 0;
+    height: inherit;
+    background: #0000ff;
+}
+
+#run-button {
+    font-size: 1.25rem;
+    color: #3a6a6a;
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.25rem;
+    border: 0.25rem solid #fff;
+    background: #fff;
+    margin-top: 1rem;
+}
+
+#run-button:hover {
+    cursor: pointer;
+}
