@@ -38,6 +38,12 @@ List of projects added so far:
     -   On clicking the odd coloured cell, increment the score and increase board size by 1
     -   On clicking any other cell, reset the score and board size to 4
 
+-   [Progress Bar](/src/ProgressBar) -> Create [progress bar](https://github.com/devkodeio/the-dom-challenge/blob/main/progress-bar/README.md) exercise
+
+    -   Create the progress bar exercise using JavaScript
+    -   On clicking the run button, progress bar should transition from start to end
+    -   On clicking the button multiple times, the progress animation should get queued
+
 -   [Memory Game](/src/MemoryGame) -> Create [memory game](https://github.com/devkodeio/the-dom-challenge/blob/main/memory-game/README.md) exercise
 
     -   Create the memory game using JavaScript
